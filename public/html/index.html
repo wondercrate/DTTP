@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html ng-app="DTTP" lang="en">
+	<head>
+		<title>Dream Think Tank</title>
+		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  		<!-- **********************
+		CSS
+		*********************** -->
+		<link rel="stylesheet" type="text/css" href="../css/index.css">
+		<link rel="stylesheet" type="text/css" href="../css/goals.css">
+		<link rel="stylesheet" type="text/css" href="../css/profile.css">
+		<link rel="stylesheet" type="text/css" href="../css/dreams.css">
+		<link rel="stylesheet" type="text/css" href="../css/settings.css">
+		<!-- **********************
+		NODE MODULES JS
+		*********************** -->
+		<script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="/node_modules/angular/angular.min.js"></script>
+		<script type="text/javascript" src="/node_modules/angular-route/angular-route.min.js"></script>
+		<!-- **********************
+		INDEX JS
+		*********************** -->
+		<script type="text/javascript" src="../js/index.js"></script>
+	</head>
+	<body ng-controller="mainController">
+		<div class="site-wrapper">
+		<!-- **********************
+		NAVIGATION
+		*********************** -->
+		<!-- top nav -->
+		<div class="top-nav">
+			<div class="top-nav-pic">
+				<img ng-src="{{user.image}}"/>
+			</div>
+			<div class="top-nav-logo"></div>
+			<div class="nav-burger">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<!-- page nav -->
+		<div class="page-nav floatfix">
+			<div class="nav-menu">
+				<a class="active" href="#profile">Profile</a>
+				<a href="#dreams">Dreams</a>
+				<a href="#goals">Goals</a>
+				<div class="nav-menu-underline-holder">
+					<div class="nav-menu-underline p"></div>
+				</div>
+			</div>
+			<div class="new-goal-holder">
+				<div class="new-goal-icon"></div>
+			</div>
+		</div>
+		<!-- bottom nav -->
+		<div class="bottom-nav">
+			<a href="#goals">
+				<div class="bottom-nav-grid">
+					<div></div>
+				</div>
+			</a>
+			<a href="#dreams">
+				<div class="bottom-nav-grid">
+					<div></div>
+				</div>
+			</a>
+			<a href="#profile">
+				<div class="bottom-nav-grid">
+					<div></div>
+				</div>
+			</a>
+		</div>
+		<!-- popout nav -->
+		<div class="popout-nav">
+			<div class="popout-nav-top">
+				<div class="popout-nav-top-exit"></div>
+				<a href="#settings">Settings</a>
+				<a href="/welcome/">Logout</a>
+			</div>
+			<div class="popout-nav-bottom"></div>
+		</div>
+		<!-- NEW GOAL MODAL -->
+		<div class="new-goal-modal-overlay">
+			<div class="new-goal-modal">
+				<div class="new-goal-modal-head">
+					<p>New goal</p>
+					<div class="new-goal-exit"></div>
+				</div>
+				<div class="new-goal-modal-body">
+					<textarea ng-model="goal.content" placeholder="Write your goal here.."></textarea>
+				</div>
+				<div class="new-goal-modal-footer floatfix">
+					<span>Private?</span>
+					<div class="goal-options-con">
+					<div class="goal-options floatfix">
+						<div class="goal-option-slider"></div>
+						<div class="goal-options-grid no">
+							<span class="active">No</span>
+						</div>
+						<div class="goal-options-grid yes">
+							<span>Yes</span>
+						</div>
+					</div>
+					</div>
+					<button ng-click="postPublicGoal(goal)">Submit</button>
+				</div>
+			</div>
+		</div>
+		<!-- LOCATION PERMISSION MODAL -->
+		<div class="location-permission-modal-overlay">
+			<div class="location-permission-modal">
+				<div class="location-permission-modal-head">
+					<p>LOCATION PERMISSION</p>
+				</div>
+				<div class="location-permission-modal-body">
+					<p>You can change you're location permission settings in > settings at any time.</p>
+				</div>
+				<div class="location-permission-modal-footer floatfix">
+					<div>
+						<button ng-click="allowLocation()">ALLOW</button>
+						<button ng-click="denyLocation()">DENY</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- **********************
+		ROUTE WINDOW
+		*********************** -->
+		<div ng-view class="route-window"></div>
+		</div>
+		<!-- **********************
+		ADDITIONAL LIBRARIES/JQUERY
+		*********************** -->
+		<script type="text/javascript" src="/node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js"></script>
+		<script type="text/javascript" src="/node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
+		<script type="text/javascript" src="../js/nav.js"></script>
+		<script type="text/javascript" src="../js/popout-nav.js"></script>
+		<script type="text/javascript" src="../js/new-goal.js"></script>
+		<script type="text/javascript" src="../js/location-permission.js"></script>
+		<script type="text/javascript" src="../js/goal-options.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLzmnhfXY9fvlu2tGxqwWd0csMa3zgofo"></script>
+		<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+	</body>
+</html> 

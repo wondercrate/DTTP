@@ -1,0 +1,31 @@
+<div class="page-con">
+	<div class="goals-con">
+		<div class="goal floatfix" ng-repeat="goal in allGoalsArray | filter: { public: true } | orderBy: '-timeStamp'">
+			<div class="goal-grid">
+				<div class="goal-grid-pic" ng-click="getThisUser(goal)">
+					<img ng-src="{{goal.userSubmitted.image}}"/>
+				</div>
+			</div>
+			<div class="goal-grid">
+				<strong><p style="margin-bottom: 5px;">@{{goal.userSubmitted.username}}</p></strong>
+				<p>{{goal.content}}</p>
+			</div>
+			<div class="goal-grid">
+				<div ng-if="goal.userId === user._id">
+	                <div class="option-toggle down" ng-click="toggled = true"></div>
+	                <div class="option-toggle up" ng-click="toggled = false"></div>
+	                <div class="option-con">
+	                  	<a>Accomplished</a>
+	                  	<a>Delete</a>
+	                </div>
+              	</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+

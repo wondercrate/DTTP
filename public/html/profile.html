@@ -1,0 +1,104 @@
+<div class="profile-con">
+  <div class="profile-con-top">
+  <div class="profile-info-con">
+    <div class="profile-info-con-pic">
+      <img ng-src="{{user.image}}"/>
+    </div>
+    <p style="color: #fff">{{user.name}}</p>
+  </div>
+    <div class="tab-con">
+      <a class="active">Shared</a>
+      <a>Accomplished</a>
+      <a>Private</a>
+      <div class="tab-follower l"></div>
+    </div>
+    <div class="divider"></div>
+    </div>
+    <div class="test-con floatfix">
+      <div class="wrapper floatfix">
+      <div class="test toggle">
+        <div class="goals-con">
+          <div class="goal floatfix" ng-repeat="goal in userGoalsArray | filter: { public: true, accomplished: false } | orderBy: '-timeStamp'" ng-class="{toggled: toggled}">
+            <div class="goal-grid">
+              <div class="goal-grid-pic">
+                <img ng-src="{{user.image}}"/>
+              </div>
+            </div>
+            <div class="goal-grid">
+              <strong><p style="margin-bottom: 5px;">@{{user.username}}</p></strong>
+              <p>{{goal.content}}</p>
+            </div>
+            <div class="goal-grid">
+              <div class="option-toggle down" ng-click="toggled = true"></div>
+              <div class="option-toggle up" ng-click="toggled = false"></div>
+              <div class="option-con">
+                <a ng-click="accomplishedGoal(goal)">Accomplished</a>
+                <a ng-click="deleteGoal(goal._id)">Delete</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="test">
+        <div class="goals-con">
+          <div class="goal floatfix" ng-repeat="goal in userGoalsArray | filter: { accomplished: true } | orderBy: '-timeStamp'" ng-class="{toggled: toggled}">
+            <div class="goal-grid">
+              <div class="goal-grid-pic">
+                <img ng-src="{{user.image}}"/>
+              </div>
+            </div>
+            <div class="goal-grid">
+              <strong><p style="margin-bottom: 5px;">@{{user.username}}</p></strong>
+              <p>{{goal.content}}</p>
+            </div>
+            <div class="goal-grid">
+              <div class="option-toggle down" ng-click="toggled = true"></div>
+              <div class="option-toggle up" ng-click="toggled = false"></div>
+              <div class="option-con">
+                <a ng-click="accomplishedGoal(goal)" style="display: none;">Accomplished</a>
+                <a ng-click="deleteGoal(goal._id)">Delete</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="test">
+        <div class="goals-con">
+          <div class="goal floatfix" ng-repeat="goal in userGoalsArray | filter: { public: false } | orderBy: '-timeStamp'">
+            <div class="goal-grid">
+              <div class="goal-grid-pic">
+                <img ng-src="{{user.image}}"/>
+              </div>
+            </div>
+            <div class="goal-grid">
+              <strong><p style="margin-bottom: 5px;">@{{user.username}}</p></strong>
+              <p>{{goal.content}}</p>
+            </div>
+            <div class="goal-grid"></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+</div>
+<!--<form name="myForm">
+    <fieldset>
+      <br>Photo:
+      <input type="file" ngf-select ng-model="picFile" name="file"    
+             accept="image/*" ngf-max-size="2MB" required
+             ngf-model-invalid="errorFile">
+      <i ng-show="myForm.file.$error.required">*required</i><br>
+      <i ng-show="myForm.file.$error.maxSize">File too large 
+          {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+      <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb"> <button ng-click="picFile = null" ng-show="picFile">Remove</button>
+      <br>
+      <button ng-click="uploadPic(picFile)">Submit</button>
+      <span class="progress" ng-show="picFile.progress >= 0">
+        <div style="width:{{picFile.progress}}%" 
+            ng-bind="picFile.progress + '%'"></div>
+      </span>
+      <span ng-show="picFile.result">Upload Successful</span>
+      <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+    </fieldset>
+    <br>
+    </form>-->

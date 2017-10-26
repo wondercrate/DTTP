@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Welcome</title>
+		<meta charset="UTF-8">
+  		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" type="text/css" href="../css/home.css">
+	</head>
+	<body>
+		<div class="form-con">
+			<h1>Signup</h1>
+			<form method="post" action="/welcome/signup">
+				<input type="text" name="name" placeholder="Name.."/>
+				<input type="text" name="username" placeholder="Username.."/>
+				<input type="password" name="password" placeholder="Password.."/>
+				<button type="submit">Signup</button>
+			</form>
+		</div>
+		<div class="form-con">
+			<h1>Login</h1>
+			<form method="post" action="/welcome/">
+				<input type="text" name="username" placeholder="Username.."/>
+				<input type="password" name="password" placeholder="Password.."/>
+				<button type="submit">Login</button>
+			</form>
+		</div>
+	</body>
+</html>

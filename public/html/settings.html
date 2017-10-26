@@ -1,0 +1,35 @@
+<div class="settings-con">
+	<div style="width: 100%; height: 140px; position: relative;">
+	<div class="settings-con-pic" ngf-select ng-model="picFile" name="file"    
+	             accept="image/*" ngf-max-size="2MB" required >
+		<div class="settings-con-pic-overlay">
+			<span>Change</span>
+		</div>
+		<img ng-src="{{user.image}}"/>
+	</div>
+	<div class="settings-con-pic preview">
+		<img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="preview-new"> 
+	</div>
+	<div class="upload-con">
+		<button ng-click="uploadPic(picFile)" ng-show="picFile">Confirm</button>
+		<button ng-click="picFile = null" ng-show="picFile">Cancel</button>
+	</div>
+	</div>
+	<div class="location-update-con">
+		<span>Location permission</span>
+		<div class="on-off-con floatfix">
+			<div class="on-off-btn"></div>
+			<div class="on-off-grid l" ng-click="denyLocation()">
+				<span>off</span>
+			</div>
+			<div class="on-off-grid r" ng-click="allowLocation()">
+				<span>on</span>
+			</div>
+		</div>
+	</div>
+	<!--<div class="gen-info-con">
+		<div class="custom-input-con">
+			<input class="custom-input">
+		</div>
+	</div>-->
+</div>

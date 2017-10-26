@@ -1,0 +1,15 @@
+.dream-con {
+	width: 100%;
+	height: calc(100vh - 100px);
+	background-color: black;
+}
+#map {
+	width: 100%;
+	height: 100%;
+}
+
+@media (max-width: 425px) {
+	.dream-con {
+		height: calc(100vh - 150px);
+	}
+}
