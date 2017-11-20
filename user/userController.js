@@ -10,7 +10,7 @@ var performLogin = function(req, res, next, user) {
 };
 var userController = {
 	login: function(req, res) {
-		res.sendFile('/html/home.html', {root: './public'});
+		res.sendFile('/html/landing.html', {root: './public'});
 	},
 	processLogin: function(req, res, next) {
 		var authFunction = passport.authenticate('local', function(err, user, info) {

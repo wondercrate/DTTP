@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +16,7 @@
 		<script type="text/javascript" src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 		<!-- ANGULAR -->
 		<script src="/node_modules/angular/angular.min.js"></script>
+		<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
   		<!-- GOOGLE FONTS -->
   		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	</head>
@@ -65,7 +66,7 @@
 		  <div class="modal-dialog clearfix" role="document">
 		    <div class="modal-content clearfix">
 		      <div class="modal-body clearfix">
-				<form action="/auth/signup" method="post" id="msform">
+				<form action="/welcome/signup" method="post" id="msform">
 				  <!-- progressbar -->
 				  	<div class="prog-wrap">
 					  	<ul id="progressbar">
@@ -132,7 +133,7 @@
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
 		      <div class="modal-body">
-				<form action="/auth/login" method="post" id="msform">
+				<form action="/welcome/" method="post" id="msform">
 				  	<div class="fieldset-wrap">
 				  	<fieldset>
 				  		<h1 class="fieldset-header">Username</h1>
@@ -156,8 +157,6 @@
 		</div>
 		<!-- END LOGIN MODAL -->	
 		<!-- BOOTSTRAP-->
-		<script src="/js/home.js"></script>
-		<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="/js/custom-form.js"></script>
 	</body>
 </html>
