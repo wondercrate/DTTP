@@ -51,7 +51,7 @@ app.get('/api/goals/get', goalController.getAllGoals);
 app.post('/api/goals/accomplished', goalController.accomplishedGoal)
 /* DELETE GOAL */
 app.delete('/api/goals/delete/:id', goalController.deleteGoal);
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 app.listen(port, function(){
   console.log('Server running on port ' + port);
 });
